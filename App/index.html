@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html', { "title":"Sociotrack" })
+
+<body>
+  @@include('_header.html', {})
+  <main class="page">
+    <div class="sidebar">
+      <div class="sidebar__container">
+        <div class="profile-sidebar">
+          <div class="profile-sidebar__avatar">
+            <img src="img/Avatar.png" alt="Avatar">
+          </div>
+          <div class="profile-sidebar__info">
+            <div class="name">Abhisek Das
+              <span></span></div>
+            <div class="followers">
+              <span class="quantity">10.968</span>
+              Followers
+            </div>
+          </div>
+        </div>
+        <nav class="sidebar-menu">
+          <ul class="sidebar-menu__list">
+            <li><a href="" class="sidebar-menu__link sidebar-menu__link_dashboard">Dashboard</a></li>
+            <li><a href="" class="sidebar-menu__link sidebar-menu__link_socialfeed">Social Feed</a></li>
+            <li><a href="" class="sidebar-menu__link sidebar-menu__link_invite-friends">Invite Friends</a></li>
+            <li><a href="" class="sidebar-menu__link sidebar-menu__link_settings">Settings</a></li>
+            <li><a href="" class="sidebar-menu__link sidebar-menu__link_log-out">Log out</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="dashboard">
+      <div class="dashboard__container _container">
+        <div class="dashboard__header">
+          <a class="dashboard__title" href="#">@ABHISEK.DAS</a>
+          <label for="view" class="connect-button">+ Add Social
+            Profile</д>
+        </div>
+        <div class="dashboard__date">
+          <nav class="date-menu">
+            <ul class="date-menu__list">
+              <li><a href="" class="date-menu__link active">Last day</a></li>
+              <li><a href="" class="date-menu__link">Week</a></li>
+              <li><a href="" class="date-menu__link">Month</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="dashboard-items" id="dashboard">
+
+        </div>
+      </div>
+    </div>
+
+    @@include('_popup.html', {})
+  </main>
+  @@include('_footer.html', {})
+  @@include('_js.html', {})
+</body>
+
+
+
+</html>

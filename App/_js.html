@@ -1,0 +1,61 @@
+<script type="text/javascript">
+
+  function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function () {
+      if (rawFile.readyState === 4 && rawFile.status == "200") {
+        callback(rawFile.responseText);
+      }
+    }
+    rawFile.send(null);
+  }
+
+  readTextFile("../dashboard.json", function (text) {
+    var data = JSON.parse(text);
+    var elementData = [];
+    elementData = data.dashboard
+    var dashboardItems = document.getElementById('dashboard')
+    var arrow = "img/trend-down.svg"
+
+    for (let i in elementData) {
+      if (elementData[i].rating[0] === "+") {
+        arrow = "img/trend-up.svg"
+      }
+      if (elementData[i].rating[0] != "+" && elementData[i].rating[0] != "-") {
+        arrow = ""
+      }
+
+      var row = getTemplate(elementData[i], arrow)
+      dashboardItems.innerHTML += row
+    }
+  });
+
+  function getTemplate(item, arrow) {
+    return `
+    <div class="dashboard-item">
+      <div class="social-box" style="background: url(${item.background}) center">
+        <div class="social-box__logo">
+          <img src="${item.logo}" alt="">
+        </div>
+        <div class="social-box__quantity">${item.quantity}</div>
+        <div class="social-box__followers">${item.people}</div>
+        <div class="social-box__rating">${item.rating}</div>
+        <div class="social-box__trend">
+          <img src="${arrow}" alt="">
+        </div>
+      </div>
+      <div class="social-user">
+        <div class="social-user__avatar">
+          <img src="${item.avatar}" alt="Avatar1">
+        </div>
+        <div class="social-user__username">
+          <div class="social-user__username_service">${item.social}</div>
+          <div class="social-user__username_link">${item.link}</div>
+        </div>
+      </div>
+    </div>
+  `;
+  }
+</script>

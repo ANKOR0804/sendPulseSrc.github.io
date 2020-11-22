@@ -1,0 +1,270 @@
+.page {
+  display: flex;
+  flex-grow: 1;
+
+  .sidebar {
+    display: flex;
+    flex: 0 0 240px;
+    background-color: #44c677;
+    transition: all 0.3s ease 0s;
+    @media (max-width: $md4+px) {
+      position: absolute;
+      top: -100%;
+      &.active {
+        top: 50px;
+        width: 100vw;
+        height: calc(100% - 50px);
+        overflow: hidden;
+        z-index: 5;
+      }
+    }
+
+    &__container {
+      padding: 40px 20px 0;
+    }
+
+    .profile-sidebar {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+
+      &__info {
+        padding-left: 10px;
+        .name {
+          font-size: 14px;
+          line-height: 16,41px;
+          color: #fff;
+        }
+
+        .followers{
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 14,06px;
+          color:  rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    .sidebar-menu {
+      padding: 40px 0px 0;
+      &__link {
+        padding-left: 54px;
+        line-height: 50px;
+        font-size: 14px;
+        color: #fff;
+        display: inline-block;
+        border-radius: 5px;
+        width: 200px;
+        transition: all 0.3s ease 0s;
+        background-position: top 50% left 20px !important;
+        @media (min-width: $md2+px) {
+        &:hover, &:active  {
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.0472713);
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+        &_dashboard {
+          background: url("../img/dashboard-icon.svg") left no-repeat;
+        }
+        &_socialfeed {
+          background: url("../img/social-feed-icon.svg") left no-repeat;
+        }
+        &_invite-friends {
+          background: url("../img/invite-friends-icon.svg") left no-repeat;
+        }
+        &_settings {
+          background: url("../img/settings-icon.svg") left no-repeat;
+        }
+        &_log-out {
+          background: url("../img/log-out-icon.svg") left no-repeat;
+        }
+      }
+    }
+  }
+
+  .dashboard {
+    display: flex;
+    flex: 1 1 auto;
+    background-color: #eff7ed;
+    @media (max-width: $md4+px) {
+      &.active {
+        display: none;
+      }
+    }
+
+    &__container {
+      width: 1010px;
+      margin-top: 75px;
+      @media (max-width: $md3+px) {
+        width: 100vw;
+        padding: 0 20px;
+      }
+      @media (max-width: $md3+px) {
+        margin-top: 25px;
+      }
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: $md4+px) {
+        margin-top: 0;
+      }
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 28px;
+      color: #1CAF5E;
+      text-transform: lowercase;
+    }
+
+    .connect-button {
+      border: 1px solid #1CAF5E;
+      border-radius: 4px;
+      font-size: 14px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 154px;
+      height: 40px;
+      background: none;
+      color: #1CAF5E;
+      text-align: center;
+      transition: all 0.3s ease 0s;
+
+      @media (min-width: $md2+px) {
+        &:hover {
+          background: #1CAF5E;
+          color: #fff;
+        }
+      }
+
+      @media (max-width: $md4+px) {
+        width: 100px;
+      }
+    }
+
+    .date-menu {
+      margin-top: 18px;
+      &__list {
+        display: flex;
+      }
+      &__link {
+        font-size: 16px;
+        line-height: 19px;
+        color: #333333;
+        margin-right: 35px;
+        padding-bottom: 8px;
+        transition: all 0.25s ease 0s; 
+        @media (min-width: $md2+px) {
+          &:hover, &:active {
+            border-bottom: 4px solid #B8E986;
+          }
+        }
+      }
+      &__link.active {
+        border-bottom: 4px solid #B8E986;
+      }
+    }
+
+    .dashboard-items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 37px;
+      @media(max-width: $md4+px) {
+        justify-content: center;
+      }
+
+      .dashboard-item {
+        margin-bottom: 25px;
+        @media(max-width: $md4+px) {
+          margin: 0 25px 50px;
+        }
+      }
+
+      .social-box {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        background: url("../img/facebook-item.jpg") center;
+        position: relative;
+
+        &__logo {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+        }
+
+        &__quantity {
+          position: absolute;
+          top: 63px;
+          left: 20px;
+          font-family: Oswald;
+          font-weight: bold;
+          font-size: 42px;
+          line-height: 62px;
+          color: #FFFFFF;
+        }
+
+        &__followers {
+          position: absolute;
+          top: 122px;
+          left: 21px;
+          font-family: Oswald;
+          font-size: 11px;
+          line-height: 16px;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;        
+          color: #FFFFFF;
+        }
+
+        &__rating {
+          position: absolute;
+          top: 158px;
+          left: 148px;
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 26px;
+          line-height: 30px;
+          text-align: right;
+          color: #FFFFFF;
+        }
+
+        &__trend {
+          position: absolute;
+          top: 169px;
+          left: 183px;
+        }
+      }
+      .social-user {
+        display: flex;
+        padding-top: 10px;
+        align-items: center;
+
+        &__username {
+          margin-left: 10px;
+
+          &_service {
+            font-size: 13px;
+            line-height: 15px;
+            color: #333333;
+            mix-blend-mode: normal;
+            opacity: 0.5;
+          }
+
+          &_link {
+            font-size: 13px;
+            line-height: 15px;
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+}

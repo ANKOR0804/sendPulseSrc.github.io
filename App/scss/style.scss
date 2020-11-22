@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:regular,700&display=swap&subset=cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Oswald:regular,700&display=swap&subset=cyrillic-ext');
+
+$minWidth: 320px;
+$maxWidth: 1400;
+$maxWidthContainer: 1010;
+$md1: $maxWidthContainer + 240;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  @media (max-width: $md1+px) {
+    max-width: 730px;
+  }
+  @media (max-width: $md2+px) {
+    max-width: 510px;
+  }
+  @media (max-width: $md3+px) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+@import 'header';
+@import 'main';
+@import 'footer';
+@import 'media';
+@import 'popup';

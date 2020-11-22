@@ -1,0 +1,60 @@
+{
+  "dashboard": [
+  {
+    "social": "facebook",
+    "quantity": "1,701",
+    "rating": "4",
+    "avatar": "img/avatar1.jpg",
+    "link": "@abhisek.daas"
+  },
+  {
+    "social": "twitter",
+    "quantity": "1,567",
+    "rating": "-3",
+    "avatar": "img/avatar2.jpg",
+    "link": "@wholetthedasout"
+  },
+  {
+    "social": "instagram",
+    "quantity": "1,139",
+    "rating": "+11",
+    "avatar": "img/avatar3.jpg",
+    "link": "@wholetthedasout"
+  },
+  {
+    "social": "linkedin",
+    "quantity": "2,106",
+    "rating": "+39",
+    "avatar": "img/avatar4.jpg",
+    "link": "@abhisekd3"
+  },
+  {
+    "social": "youtube",
+    "quantity": "3,190",
+    "rating": "+22",
+    "avatar": "img/avatar5.jpg",
+    "link": "@TheAbhisekD"
+  },
+  {
+    "social": "snapchat",
+    "quantity": "8,754",
+    "rating": "",
+    "avatar": "img/avatar6.jpg",
+    "link": "@abhisekd"
+  },
+  {
+    "social": "google+",
+    "quantity": "1,033",
+    "rating": "",
+    "avatar": "img/avatar7.jpg",
+    "link": "@+AbhisekDas"
+  },
+  {
+    "social": "vine",
+    "quantity": "1,045",
+    "rating": "",
+    "avatar": "img/avatar8.jpg",
+    "link": "@1316139228245221376"
+  }
+  ]
+}
